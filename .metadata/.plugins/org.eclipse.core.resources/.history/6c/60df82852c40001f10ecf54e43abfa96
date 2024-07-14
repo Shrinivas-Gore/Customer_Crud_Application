@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: CustomerService
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver

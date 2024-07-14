@@ -1,0 +1,9 @@
+ package com.demo.exception;
+
+public class CustomerNotFoundException extends RuntimeException {
+
+	private String msg;
+	public CustomerNotFoundException(String msg) {
+		this.msg = msg;
+	}
+}

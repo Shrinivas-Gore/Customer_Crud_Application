@@ -1,0 +1,18 @@
+package com.demo.Service;
+
+import org.springframework.stereotype.Service;
+
+import com.demo.dao.CustomerDao;
+
+@Service
+public class CustomerServiceImpl implements CustomerService{
+
+	private CustomerDao customerDao;
+	
+	public CustomerServiceImpl(CustomerDao customerDao) {
+		this.customerDao = customerDao;
+	}
+	
+	
+	
+}

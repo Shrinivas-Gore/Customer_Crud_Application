@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: #fff;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #333;
+      border-radius: 8px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #555;
+    }
+
+    th {
+      background-color: #444;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .search-bar select {
+      padding: 8px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      background-color: #444;
+      color: #fff;
+      width: 150px;
+      margin-right: 10px;
+    }
+
+    .pagination {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .pagination button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .pagination button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Customer List</h1>
+    <div class="search-bar">
+      <select id="search-field">
+        <option value="first_name">First Name</option>
+        <option value="last_name">Last Name</option>
+        <option value="address">Address</option>
+        <option value="city">City</option>
+        <option value="state">State</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+      </select>
+      <button id="create-customer-button" onclick="newCustomer.html">Create New Customer</button>
+      <input type="text" id="search-input" placeholder="Search...">
+      <button type="submit" id="search-button">Search</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="customer-list">
+        <!-- customer data will be displayed here -->
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button id="prev-page-button">Previous</button>
+      <button id="next-page-button">Next</button>
+      <span id="page-number">Page 1 of 10</span>
+    </div>
+  </div>
+  <script src="customer.js"></script>
+</body>
+</html>

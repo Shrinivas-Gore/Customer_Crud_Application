@@ -1,0 +1,62 @@
+package com.demo.Service;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.demo.dao.CustomerDao;
+import com.demo.exception.CustomerNotFoundException;
+import com.demo.model.Customer;
+
+@Service
+public class CustomerServiceImpl implements CustomerService{
+
+	private CustomerDao customerDao;
+	
+	public CustomerServiceImpl(CustomerDao customerDao) {
+		this.customerDao = customerDao;
+	}
+
+	@Override
+	public Customer save(Customer customer) {
+		return customerDao.save(customer);
+	}
+
+	@Override
+	public int deleteById(String id) {
+		int check = customerDao.deleteByCustomerId(id);
+		if(check != 0)
+			return check;
+		else
+			throw new CustomerNotFoundException("Enter valid Customer Id");
+	}
+
+	@Override
+	public List<Customer> findAll() {
+		return customerDao.findAll();
+	}
+
+	@Override
+	public Page<Customer> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Customer> findAll(Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Customer> findByFirstName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+}
