@@ -19,7 +19,7 @@ we can search customer based on selected field ex. firstName, lastName, etc.
 - Frontend: HTML, CSS, JavaScript
 - Database: MySQL
 
-## server pot
+## server port
 -9090
 
 ## API Endpoints
